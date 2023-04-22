@@ -11,7 +11,8 @@ import lombok.Setter;
 public class Aerolinea {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idareolinea")
+
+    @Column(name = "idaerolinea")
     private int idareolinea;
 
     @Column(name = "nombre")

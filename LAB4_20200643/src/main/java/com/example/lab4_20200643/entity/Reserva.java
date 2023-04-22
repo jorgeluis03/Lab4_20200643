@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Getter
@@ -20,14 +21,14 @@ public class Reserva {
     private Date fecha_reserva;
 
     @Column(name = "precio_total")
-    private int  precio_total;
+    private BigDecimal precio_total;
 
     @Column(name = "estado_pago")
     private String nombre;
-
-    @Column(name = "user_iduser")
-    private int iduser;
-
-    @Column(name = "vuelo_idvuelo")
-    private int id_vuelo;
+    @ManyToOne
+    @JoinColumn(name = "user_iduser")
+    private User user;
+    @ManyToOne
+    @JoinColumn(name = "vuelo_idvuelo")
+    private Vuelo vuelo;
 }

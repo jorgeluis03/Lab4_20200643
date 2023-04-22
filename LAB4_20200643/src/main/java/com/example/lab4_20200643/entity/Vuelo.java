@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Getter
@@ -28,13 +29,13 @@ public class Vuelo {
     private int duracion;
 
     @Column(name = "precio")
-    private int  precio;
+    private BigDecimal precio;
     @Column(name = "asientos_disponibles")
     private int  asientos_disponibles;
     @Column(name = "descripcion")
     private String descripcion;
     @ManyToOne
-    @JoinColumn(name = "idaerolinea")
+    @JoinColumn(name = "aerolinea_idaerolinea")
     private Aerolinea  aerolinea;
 
 }
