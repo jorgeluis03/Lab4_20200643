@@ -25,10 +25,10 @@ public class Reserva {
 
     @Column(name = "estado_pago")
     private String nombre;
-    @ManyToOne
-    @JoinColumn(name = "user_iduser")
-    private User user;
-    @ManyToOne
-    @JoinColumn(name = "vuelo_idvuelo")
-    private Vuelo vuelo;
+
+    @Column(name = "user_iduser")
+    private int user;
+
+    @Column(name = "vuelo_idvuelo")
+    private int vuelo;
 }
